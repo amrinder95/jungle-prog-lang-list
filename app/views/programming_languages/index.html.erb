@@ -7,11 +7,14 @@
       <%= link_to "More information about #{language.title}", programming_language_path(language) %>
     </li>
     <li>
-      <%= link_to 'Edit', programming_language_path(language) %>
-    </li>
-    <li>
-      <%= link_to 'Delete', programming_language_path(language) %>
+      <%= link_to 'Edit', edit_programming_language_path(language)  %>
     </li>
     </ul>
+    <%= form_with(model: language, url: programming_language_path(language), method: :delete, data: { confirm: 'Are you sure?' }) do |form| %>
+      <%= form.submit 'Delete', class: 'btn btn-danger' %>
+    <% end %>
   <% end %>
+</div>
+<div>
+<%= link_to 'Add new language', new_programming_language_path %>
 </div>

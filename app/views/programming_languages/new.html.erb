@@ -1,2 +1,27 @@
-<h1>ProgrammingLanguages#new</h1>
-<p>Find me in app/views/programming_languages/new.html.erb</p>
+<section>
+<div>
+<h1>Add a New Programming Language</h1>
+
+<%= form_with(model: @language, url: programming_languages_path, method: :post) do |form| %>
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :link %>
+    <%= form.text_field :link %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Create Language' %>
+  </div>
+<% end %>
+
+<%= link_to 'Back to All Programming Languages', '/' %>
+</section>

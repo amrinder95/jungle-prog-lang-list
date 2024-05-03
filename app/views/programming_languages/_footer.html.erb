@@ -1,3 +1,8 @@
+
 <div>
-  <%= link_to 'Return', '/' %>
+  <%= link_to 'Back to All Programming Languages', '/' %>
+  <%= link_to 'Edit', '/programming_languages/edit/#{language.id}'  %>
+  <%= form_with(model: language, url: programming_language_path(language), method: :delete, data: { confirm: 'Are you sure?' }) do |form| %>
+    <%= form.submit 'Delete', class: 'btn btn-danger' %>
+  <% end %>
 </div>
